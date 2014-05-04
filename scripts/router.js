@@ -3,7 +3,7 @@
 angular.module('voiceUp').
     config(function ($stateProvider, $urlRouterProvider, settings) {
 
-        $urlRouterProvider.otherwise('/main/');
+        $urlRouterProvider.otherwise('/verification');
 
         $stateProvider.
             state('splash', {
@@ -24,5 +24,10 @@ angular.module('voiceUp').
                 url        : '/add/:category',
                 templateUrl: settings.paths.views + 'add.html',
                 controller : 'AddCtrl'
+            }).
+            state('verification', {
+                url        : '/verification',
+                templateUrl: settings.paths.views + 'verification.html',
+                controller : 'VerificationCtrl'
             });
     });
