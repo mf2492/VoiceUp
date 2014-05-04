@@ -1,0 +1,24 @@
+{
+  "name": "voiceUp",
+  "version": "0.0.1",
+  "dependencies": {
+    "json3": "~3.2.4",
+    "es5-shim": "~2.0.8",
+    "angular": "~1.2.*",
+    "angular-cookies": "*",
+    "angular-sanitize": "*",
+    "angular-animate": "*",
+    "angular-resource": "~1.0.7",
+    "angular-timer": "~1.0.4",
+    "angular-ui-router": "0.2.*",
+    "lodash": "~2.4.1",
+    "Framework7": "https://github.com/nolimits4web/Framework7.git#master"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.0.7",
+    "angular-scenario": "~1.0.7"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
+  }
+}
