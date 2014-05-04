@@ -31,7 +31,7 @@
                 <ul>
                     <li class="" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
                         <div class="">
-                            <a href="#" class="item-link item-content">
+                            <a href="#" class="item-link item-content"  ng-style="{'background' : comment.color }">
                                 <div class="item-inner">
                                     <div class="item-title-row">
                                         <div class="item-title"></div>

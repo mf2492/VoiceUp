@@ -6,7 +6,9 @@ angular.module('voiceUp').
             return {
                 link: function ($scope, element) {
                     element.on('click', function (event) {
-                        $scope.addComment();
+                        $scope.analyze().then(function () {
+                            $scope.addComment();
+                        });
                     });
                 }
             }
@@ -18,4 +20,18 @@ angular.module('voiceUp').
                     
                     }
                 }
-            }]);
+            }]).
+    directive('changeColor', ['$timeout',
+        function ($timeout) {
+            return {
+                link: function ($scope, element) {
+                    $scope.$watch('analyzed', function(newVal, oldVal) {
+                        if (newVal != oldVal) {
+                            element.css('background-color:red');
+                            element.addClass('green')
+                        }
+                    });
+                }
+            }
+        }
+    ]);

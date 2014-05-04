@@ -8,13 +8,14 @@ angular.module('voiceUp').
 
             var comments = ($cookies.comments) ? JSON.parse($cookies.comments) : [];
 
-            function formatNewComment(text, sentimentObj) {
+            function formatNewComment(text, sentimentObj, color) {
                 return {
                     text: text,
                     votes: 0,
                     timestamp : new Date().getTime() / 1000,
                     comments: [],
-                    sentiment: sentimentObj
+                    sentiment: sentimentObj,
+                    color: color || '#fff'
                 }
             }
 
@@ -24,9 +25,9 @@ angular.module('voiceUp').
                     return comments;
                 },
 
-                add: function(text, sentimentObj) {
-                    log.info('Comment added', formatNewComment(text, sentimentObj));
-                    comments.push(formatNewComment(text, sentimentObj));
+                add: function(text, sentimentObj, color) {
+                    log.info('Comment added', formatNewComment(text, sentimentObj, color));
+                    comments.push(formatNewComment(text, sentimentObj, color));
 
                     $cookies.comments = JSON.stringify(comments);
                 },
