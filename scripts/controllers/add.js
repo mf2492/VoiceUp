@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('voiceUp')
-    .controller('AddCtrl', ['$scope', 'semantria', 'comments',
-        function ($scope, semantria, comments) {
+    .controller('AddCtrl', ['$scope', 'semantria', 'comments', '$stateParams',
+        function ($scope, semantria, comments, $stateParams) {
 
             log.ctrl('Main');
 
@@ -10,6 +10,9 @@ angular.module('voiceUp')
             $scope.analyzed = null;
 
             $scope.background = '#fff';
+
+            $scope.category = $stateParams.category;
+
 
             var comment;
 
@@ -73,7 +76,7 @@ angular.module('voiceUp')
                 comments.add($scope.comment, {
                     sentiment_score: $scope.analyzed.sentiment_score,
                     sentiment_polarity: $scope.analyzed.sentiment_polarity,
-                }, $scope.background);
+                }, $scope.background, $scope.category);
 
             }
 

@@ -1,3 +1,21 @@
+<div class="panel-overlay"></div>
+<div class="panel panel-left panel-cover">
+    <div class="content-block-title">Categories</div>
+    <div class="list-block">
+        <ul>
+            <li ng-repeat="cat in categories">
+                <a ng-click="filterNow(cat)" class="close-panel item-link">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">{{ cat }}</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <div class="pages navbar-through toolbar-through">
     <div class="navbar">
         <div class="navbar-inner navbar-on-left">
@@ -10,16 +28,13 @@
 
         <div class="navbar-inner navbar-on-center">
             <div class="left sliding" style="-webkit-transform: translate3d(0px, 0px, 0px);">
-                <a href="#" class="back link">
-                    <i class="icon icon-back-blue" style="-webkit-transform: translate3d(0px, 0px, 0px);"></i>
-                    <span>Back</span>
-                </a>
+                <a class="button open-panel">Left Panel</a>
             </div>
             <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
                 VoiceUp
             </div>
             <div class="right">
-                <a ui-sref="add" class="open-panel link icon-only"><i class="icon icon-plus-sign"></i>+</a>
+                <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>+</a>
             </div>
         </div>
     </div>
@@ -27,21 +42,27 @@
     <div class="page">
         <div class="page-content">
 
-            <div class="list-block media-list" ng-swipe-right="voteYes()" ng-swipe-left="voteNo()">
+            <div class="list-block media-list">
                 <ul>
-                    <li class="" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
+                    <li class="" ng-repeat="comment in comments | filter:{'category' : category}"
+                        ng-swipe-right="voteYes($index)" ng-swipe-left="voteNo($index)">
                         <div class="">
-                            <a href="#" class="item-link item-content"  ng-style="{'background' : comment.color }">
+                            <a href="#" class="item-link item-content" ng-style="{'background' : comment.color }">
                                 <div class="item-inner">
                                     <div class="item-title-row">
                                         <div class="item-title"></div>
-                                        <div class="item-after">{{ comment.timestamp * 1000 | date: 'h:mm::ss a' }}</div>
+                                        <div class="item-after">{{ comment.timestamp * 1000 | date: 'h:mm::ss a' }}
+                                        </div>
                                     </div>
-                                    <div class="item-subtitle">{{ comment.sentiment.sentiment_score }}</div>
+                                    <div class="item-subtitle">Sentiment score{{ comment.sentiment.sentiment_score }} /
+                                        Likes: {{ comment.likes }} / Dislikes: {{ comment.dislikes}}
+                                    </div>
                                     <div class="item-text">{{ comment.text }}</div>
                                     <div class="vote">
-                                        <img style="width:50px; margin-top: -65px; display:none; position:absolute;" src="thumbs-up.svg">
-                                        <img style="width:50px; margin-top: -65px; right:0; display:none; position:absolute;" src="thumbs-down.svg">
+                                        <img style="width:50px; margin-top: -65px; display:none; position:absolute;"
+                                             src="thumbs-up.svg">
+                                        <img style="width:50px; margin-top: -65px; right:0; display:none; position:absolute;"
+                                             src="thumbs-down.svg">
 
                                     </div>
                                 </div>

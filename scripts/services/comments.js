@@ -8,14 +8,18 @@ angular.module('voiceUp').
 
             var comments = ($cookies.comments) ? JSON.parse($cookies.comments) : [];
 
-            function formatNewComment(text, sentimentObj, color) {
+            var categories = ['Global', 'Engineering', 'Backend-Engineering'];
+
+            function formatNewComment(text, sentimentObj, color, category) {
                 return {
                     text: text,
-                    votes: 0,
+                    likes: '0',
+                    dislikes: '0',
                     timestamp : new Date().getTime() / 1000,
                     comments: [],
                     sentiment: sentimentObj,
-                    color: color || '#fff'
+                    color: color || '#fff',
+                    category: category
                 }
             }
 
@@ -25,9 +29,21 @@ angular.module('voiceUp').
                     return comments;
                 },
 
-                add: function(text, sentimentObj, color) {
+                add: function(text, sentimentObj, color, category) {
                     log.info('Comment added', formatNewComment(text, sentimentObj, color));
-                    comments.push(formatNewComment(text, sentimentObj, color));
+                    comments.push(formatNewComment(text, sentimentObj, color, category));
+
+                    $cookies.comments = JSON.stringify(comments);
+                },
+
+                voteYes: function(commentIndex) {
+                    comments[commentIndex].likes++;
+
+                    $cookies.comments = JSON.stringify(comments);
+                },
+
+                voteNo: function(commentIndex) {
+                    comments[commentIndex].dislikes++;
 
                     $cookies.comments = JSON.stringify(comments);
                 },
@@ -37,7 +53,12 @@ angular.module('voiceUp').
                     $cookies.comments = comments;
 
                     log.warn('All the comments were deleted!');
+                },
+
+                getCategories: function() {
+                    return categories;
                 }
+
             }
 
         }]);

@@ -13,22 +13,22 @@ angular.module('voiceUp').
                 }
             }
         }]).
-     directive('swipeVote', [
-            function () {
-                return {
-                    link: function ($scope, element) {
-                        element.on('click', function (event) {
-                            $scope.swipeVote();
-                        });
-                    
-                    }
+    directive('swipeVote', [
+        function () {
+            return {
+                link: function ($scope, element) {
+                    element.on('click', function (event) {
+                        $scope.swipeVote();
+                    });
+
                 }
-            }]).
+            }
+        }]).
     directive('changeColor', ['$timeout',
         function ($timeout) {
             return {
                 link: function ($scope, element) {
-                    $scope.$watch('analyzed', function(newVal, oldVal) {
+                    $scope.$watch('analyzed', function (newVal, oldVal) {
                         if (newVal != oldVal) {
                             element.css('background-color:red');
                             element.addClass('green')
@@ -37,4 +37,18 @@ angular.module('voiceUp').
                 }
             }
         }
-    ]);
+    ]).
+    directive('thumbDown', [function () {
+
+        return function (scope, element) {
+            scope.$watch('comment')
+            element.find('img').show()
+                .animate({
+                    'margin-left': '35%',
+                    'height': "60px",
+                    'width': '60px'
+                })
+                .fadeOut();
+        }
+
+    }]);
