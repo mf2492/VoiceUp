@@ -29,15 +29,15 @@
 
             <div class="list-block media-list">
                 <ul>
-                    <li class="swipeout" ng-repeat="comment in comments">
+                    <li class="swipeout" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
                         <div class="swipeout-content">
                             <a href="#" class="item-link item-content">
                                 <div class="item-inner">
                                     <div class="item-title-row">
                                         <div class="item-title"></div>
-                                        <div class="item-after">{{ comment.timestamp * 1000 | date: 'MMM dd' }}</div>
+                                        <div class="item-after">{{ comment.timestamp * 1000 | date: 'h:mm::ss a' }}</div>
                                     </div>
-                                    <div class="item-subtitle"></div>
+                                    <div class="item-subtitle">{{ comment.sentiment.sentiment_score }}</div>
                                     <div class="item-text">{{ comment.text }}</div>
                                 </div>
                             </a></div>
