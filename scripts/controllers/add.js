@@ -13,6 +13,16 @@ angular.module('voiceUp')
 
             $scope.category = $stateParams.category;
 
+            $scope.images = comments.getImages();
+            $scope.randomImageIndex = comments.getRandomImageIndex();
+
+            $scope.image = $scope.images[$scope.randomImageIndex];
+
+            $scope.shuffle = function() {
+                $scope.randomImageIndex = comments.getRandomImageIndex();
+                $scope.image = $scope.images[$scope.randomImageIndex];
+                $log($scope.image, 'image')
+            }
 
             var comment;
 
@@ -45,17 +55,17 @@ angular.module('voiceUp')
                     r = maxPositive.r;
                     g = maxPositive.g;
                     b = maxPositive.b;
-                    a = (score + 2) * 63.75;
+                    a = (score + 2) * .2;
                 } else if (score < 0) {
                     r = maxNegative.r;
                     g = maxNegative.g;
                     b = maxNegative.b;
-                    a = (score + 2) * 63.75;
+                    a = (score + 2) * .2;
                 } else {
                     r = maxNeutral.r;
                     g = maxNeutral.g;
                     b = maxNeutral.b;
-                    a = 255;
+                    a = .6;
                 }
 
                 $log(score, 'score')
@@ -66,7 +76,7 @@ angular.module('voiceUp')
                 $log(a, 'a');
 
                 try {
-                    return 'rgba('+r+','+g+','+b+','+Math.round(a)+')';
+                    return 'rgba('+r+','+g+','+b+','+ a +')';
                     //rgba2hex(r, g, b, Math.round(a));
                 } catch (e) {
                     console.error(e);
@@ -87,8 +97,8 @@ angular.module('voiceUp')
 
                 comments.add($scope.comment, {
                     sentiment_score: $scope.analyzed.sentiment_score,
-                    sentiment_polarity: $scope.analyzed.sentiment_polarity,
-                }, $scope.background, $scope.category);
+                    sentiment_polarity: $scope.analyzed.sentiment_polarity
+                }, $scope.background, $scope.category, $scope.image);
 
             }
 

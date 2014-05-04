@@ -1,0 +1,111 @@
+
+.clear {
+  clear:both;
+}
+.navbar .center {
+  font-weight: 100;
+  font-size: 20px;
+  color:#fff;
+  margin-left: 30px;
+}
+
+.warning{
+  text-align: center;
+}
+#submit{
+  padding: 20px 10px;
+  background: #cc3701;
+  color: #fff;
+  font-weight: 700;
+}
+
+.todo-items-list .item-content:before {
+  background: rgba(255,0,0, 0.5);
+}
+.todo-items-list .item-content {
+  /*background:#000; /* change background */
+  background: #fff url(http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/IMG_5561-1300x866.jpg);
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height:300px;
+  /* border-bottom: 1px solid #cc0442; */
+}
+.list-block .item-inner {
+  border-bottom: 0px;
+}
+.todo-items-list .item-title {
+  font-weight: 500;
+  text-shadow: #000 0px 0px 1px;
+}
+.item-control {
+  z-index: 9999;
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin: 10px 10px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+.item-control b{
+  color:#cc3701;
+}
+.item-control .fav {
+  float:right;
+  margin: 0 10px;
+}
+.item-control .left{
+  float:left;
+}
+.item-control .fav img{
+  margin: -4px 5px;
+}
+label.label-checkbox i.icon-form-checkbox {
+  display: none;
+}
+.background-image{
+  background-image: url('http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/IMG_5909-1300x866.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#shuffle-img{
+  width:30px;
+  float:right;
+  margin-top: -20px;
+  z-index: 9999;
+}
+.swipeout-content{
+
+}
+
+.list-block.media-list ul li:first-child .swipeout-content{
+  background: #000 url('http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/IMG_5992-1300x866.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.list-block.media-list ul li:nth-child(2) .swipeout-content{
+  background: #000 url('http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/Smooth-Touch-Workspace-1300x866.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+.item-content
+{
+    background: rgba(255, 255, 255, .6);
+    -webkit-transition-property:color, text;
+    -webkit-transition-duration: 1s, 1s;
+    -webkit-transition-timing-function: linear, ease-in;
+    -moz-transition-property:color, text;
+    -moz-transition-duration:1s;
+    -moz-transition-timing-function: linear, ease-in;
+
+    -o-transition-property:color, text;
+    -o-transition-duration:1s;
+    -o-transition-timing-function: linear, ease-in;
+}

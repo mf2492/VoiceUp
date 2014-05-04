@@ -18,23 +18,18 @@
 
 <div class="pages navbar-through toolbar-through">
     <div class="navbar">
-        <div class="navbar-inner navbar-on-left">
-            <div class="center sliding" style="left: 189.5px; -webkit-transform: translate3d(-170.5px, 0px, 0px);">
-                Framework7
-            </div>
-            <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars-blue"></i></a>
-            </div>
-        </div>
 
         <div class="navbar-inner navbar-on-center">
             <div class="left sliding" style="-webkit-transform: translate3d(0px, 0px, 0px);">
-                <a class="button open-panel">Left Panel</a>
+                <a class="button open-panel" style="color:white; font-size:15px">Filter</a>
             </div>
             <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
                 VoiceUp
             </div>
             <div class="right">
-                <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>+</a>
+                <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>
+                    <img src="compose2.png" style="width:35px;padding-right: 20px;">
+                </a>
             </div>
         </div>
     </div>
@@ -44,20 +39,20 @@
 
             <div class="list-block media-list">
                 <ul>
-                    <li class="" ng-repeat="comment in comments | filter:{'category' : category}"
-                        ng-swipe-right="voteYes($index)" ng-swipe-left="voteNo($index)">
-                        <div class="">
-                            <a href="#" class="item-link item-content" ng-style="{'background' : comment.color }">
+                    <li class="" ng-repeat="comment in comments | filter:{'category' : category }"
+                        ng-swipe-right="voteYes(comment.id)" ng-swipe-left="voteNo(comment.id)">
+                        <div ng-style="{'background-image' : 'url(' + comment.image +')'}">
+                            <a class="item-link item-content" ng-style="{'background' : comment.color }">
                                 <div class="item-inner">
                                     <div class="item-title-row">
                                         <div class="item-title"></div>
                                         <div class="item-after">{{ comment.timestamp * 1000 | date: 'h:mm::ss a' }}
                                         </div>
                                     </div>
-                                    <div class="item-subtitle">Sentiment score{{ comment.sentiment.sentiment_score }} /
-                                        Likes: {{ comment.likes }} / Dislikes: {{ comment.dislikes}}
+                                    <div class="item-subtitle">
+                                        <b>Positiveness {{ (comment.sentiment.sentiment_score + 2) * 25 | number }}</b>
                                     </div>
-                                    <div class="item-text">{{ comment.text }}</div>
+                                    <div class="item-text" style="font-size: 20px; padding:1em;">{{ comment.text }}</div>
                                     <div class="vote">
                                         <img style="width:50px; margin-top: -65px; display:none; position:absolute;"
                                              src="thumbs-up.svg">
@@ -67,6 +62,17 @@
                                     </div>
                                 </div>
                             </a></div>
+                        <div class="item-control">
+                            <div class="left">
+                                <div class="comment"><b>Comments</b> 21</div>
+                                <div class="flag"><b>Flag</b></div>
+                            </div>
+                            <div class="fav">
+                                <div class="like"><img src="up.png"><b>LIKES</b> {{ comment.likes }}</div>
+                                <div class="dislike"><img src="down.png"><b>DISLIKES</b> {{ comment.dislikes }}</div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
                     </li>
                 </ul>
             </div>

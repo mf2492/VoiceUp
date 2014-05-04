@@ -59,4 +59,13 @@ angular.module('voiceUp').
                 event.preventDefault();
             });
         }
+    }).
+    directive('shuffle', function() {
+        return function (scope, element) {
+            element.on('click', function() {
+                $log('click')
+                scope.shuffle();
+                event.preventDefault();
+            });
+        }
     });

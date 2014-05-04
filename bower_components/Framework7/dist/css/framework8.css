@@ -23,8 +23,7 @@ body {
   overflow-x: hidden;
 }
 body {
-  font-family: Helvetica Neue;
-  font-weight: 100;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #000;
@@ -59,7 +58,7 @@ select {
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: #007aff;
 }
 p {
   margin: 1em 0;
@@ -266,7 +265,7 @@ p {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #fff;
+  background: #efeff4;
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -505,8 +504,7 @@ html.android .page-from-center-to-right {
 .toolbar a.link {
   line-height: 44px;
   height: 44px;
-  font-size: 15px;
-  color: #000;
+  color: #007aff;
   text-decoration: none;
   position: relative;
   display: -webkit-box;
@@ -560,9 +558,8 @@ html.android .page-from-center-to-right {
 .navbar {
   left: 0;
   top: 0;
-  /* background: #fff;
-  height:30px;
-  border-bottom: 1px solid #cc3701; */
+  background: #f7f7f8;
+  border-bottom: 1px solid #c4c4c4;
 }
 .navbar .center {
   font-size: 17px;
@@ -640,7 +637,7 @@ html.android .page-from-center-to-right {
   color: #929292;
 }
 .tabbar a.active {
-  color: #000;
+  color: #007aff;
 }
 .tabbar a.tab-link {
   width: 100%;
@@ -814,7 +811,6 @@ html.android .page-from-center-to-right {
 }
 .navbar-through .page-content {
   padding-top: 44px;
-  background: #000;
 }
 .toolbar-through .page-content {
   padding-bottom: 44px;
@@ -871,12 +867,12 @@ i.icon {
 }
 i.icon.icon-back-blue {
   width: 12px;
-  height: 15px;
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%23000'/></svg>");
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%23007aff'/></svg>");
 }
 i.icon.icon-back-white {
   width: 12px;
-  height: 15px;
+  height: 20px;
   background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 20'><path d='M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z' fill='%23fff'/></svg>");
 }
 i.icon.icon-back-black {
@@ -887,7 +883,7 @@ i.icon.icon-back-black {
 i.icon.icon-bars-blue {
   width: 21px;
   height: 13px;
-  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26' fill='%23000'><rect width='4' height='4'/><rect x='8' y='1' width='34' height='2'/><rect y='11' width='4' height='4'/><rect x='8' y='12' width='34' height='2'/><rect y='22' width='4' height='4'/><rect x='8' y='23' width='34' height='2'/></svg>");
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26' fill='%23007aff'><rect width='4' height='4'/><rect x='8' y='1' width='34' height='2'/><rect y='11' width='4' height='4'/><rect x='8' y='12' width='34' height='2'/><rect y='22' width='4' height='4'/><rect x='8' y='23' width='34' height='2'/></svg>");
 }
 i.icon.icon-bars-white {
   width: 21px;
@@ -1014,7 +1010,7 @@ i.icon.icon-form-url {
 }
 /* === Lists === */
 .list-block {
-  /* margin: 35px 0; */
+  margin: 35px 0;
   font-size: 17px;
 }
 .list-block ul {
@@ -1022,6 +1018,8 @@ i.icon.icon-form-url {
   list-style: none;
   padding: 0;
   margin: 0;
+  border-top: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
   position: relative;
 }
 .list-block ul ul {
@@ -1068,8 +1066,6 @@ i.icon.icon-form-url {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  border-bottom: 1px solid rgba(204, 55, 1, 0.25);
-  background: #F1F1F1;
 }
 .list-block li:last-child .item-inner {
   border-bottom: 1px solid transparent;
@@ -1194,7 +1190,7 @@ i.icon.icon-form-url {
 .list-block .item-link.list-button {
   padding: 0 15px;
   text-align: center;
-  color: #000;
+  color: #007aff;
   display: block;
   border-bottom: 1px solid #c8c7cc;
   line-height: 43px;
@@ -1245,14 +1241,9 @@ i.icon.icon-form-url {
   transition-duration: 300ms;
 }
 .list-block .swipeout-content {
-  height:280px;
   position: relative;
   z-index: 10;
   background: #fff;
-  background: #000 url('http://picjumbo.picjumbocom.netdna-cdn.com/wp-content/uploads/IMG_5909-1300x866.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 .list-block .swipeout-actions {
   border-bottom: 1px solid #c8c7cc;
@@ -1304,14 +1295,12 @@ i.icon.icon-form-url {
   text-overflow: ellipsis;
 }
 .list-block .item-text {
-  text-align: center;
-  font-weight: 300;
-  font-size: 25px;
-  color: #fff;
-  background: #000;
-  margin-top: 50px;
+  font-size: 15px;
+  color: #8e8e93;
   line-height: 21px;
   position: relative;
+  overflow: hidden;
+  height: 42px;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1334,7 +1323,6 @@ i.icon.icon-form-url {
 .list-block li.media-item .item-link .item-inner {
   background: none;
   padding-right: 15px;
-  height: 200px;
 }
 .list-block.media-list .item-link .item-title-row,
 .list-block li.media-item .item-link .item-title-row {
@@ -1503,25 +1491,11 @@ i.icon.icon-form-url {
   vertical-align: top;
 }
 .list-block textarea {
-  height: 150px;
-  color:black;
+  height: 100px;
   resize: none;
   line-height: 1.4;
   padding-top: 8px;
-  margin-top:100px;
   padding-bottom: 7px;
-  font-weight: 300;
-  letter-spacing: 0.8px;
-  overflow: hidden;
-  font-size: 25px;
-}
-.list-block #compose-textarea {
-  padding-bottom:20px;
-  background: rgba(255, 0, 0, 0.2);
-}
-.list-block textarea::-webkit-input-placeholder {
-  font-weight: 100;
-  color:#fff;
 }
 .label-switch {
   display: inline-block;
@@ -1611,8 +1585,8 @@ i.icon.icon-form-url {
   left: 22px;
 }
 .button {
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid #007aff;
+  color: #007aff;
   text-decoration: none;
   text-align: center;
   display: block;
@@ -1643,7 +1617,7 @@ input[type="button"].button {
   border-radius: 27px;
 }
 .button.active {
-  background: #000;
+  background: #007aff;
   color: #fff;
 }
 .button.button-big {
@@ -1770,7 +1744,7 @@ input[type="button"].button {
   height: 2px;
   margin-top: -1px;
   z-index: 1;
-  background: #000;
+  background: #007aff;
   content: ' ';
 }
 label.label-checkbox {
@@ -1803,7 +1777,7 @@ label.label-checkbox input[type="radio"] {
 label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox:after,
 label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox:after {
   border: none;
-  background: #000 url("../img/i-form-checkbox-white.png") no-repeat center;
+  background: #007aff url("../img/i-form-checkbox-white.png") no-repeat center;
   -webkit-background-size: auto 9px;
   background-size: auto 9px;
 }
@@ -1936,7 +1910,7 @@ label.label-radio:active .item-inner {
   font-size: 17px;
   line-height: 44px;
   text-align: center;
-  color: #000;
+  color: #007aff;
   background: #e8e8e8;
   display: block;
   position: relative;
@@ -2049,7 +2023,7 @@ label.label-radio:active .item-inner {
   cursor: pointer;
   line-height: 43px;
   font-size: 20px;
-  color: #000;
+  color: #007aff;
 }
 .actions-modal-button:active {
   background: #dcdcdc;

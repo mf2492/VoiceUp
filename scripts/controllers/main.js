@@ -14,14 +14,14 @@ angular.module('voiceUp')
             $log($scope.comments)
 //			comments.purge();
 
-			$scope.voteYes = function(commentIndex) {
-                $scope.comments[commentIndex].votedUp = true;
-                comments.voteYes(commentIndex);
+			$scope.voteYes = function(id) {
+//                $scope.comments[commentIndex].votedUp = true;
+                comments.voteYes(id);
 			}
 
-			$scope.voteNo = function(commentIndex) {
-                $scope.comments[commentIndex].votedDown = true;
-                comments.voteNo(commentIndex);
+			$scope.voteNo = function(id) {
+//                $scope.comments[commentIndex].votedDown = true;
+                comments.voteNo(id);
 			}
 
             $scope.filterNow = function(category) {
