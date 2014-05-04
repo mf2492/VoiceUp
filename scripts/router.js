@@ -3,7 +3,7 @@
 angular.module('voiceUp').
     config(function ($stateProvider, $urlRouterProvider, settings) {
 
-        $urlRouterProvider.otherwise('/splash');
+        $urlRouterProvider.otherwise('/main/');
 
         $stateProvider.
             state('splash', {
