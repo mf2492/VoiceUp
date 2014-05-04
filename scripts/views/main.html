@@ -29,8 +29,8 @@
 
             <div class="list-block media-list">
                 <ul>
-                    <li class="swipeout" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
-                        <div class="swipeout-content">
+                    <li class="" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
+                        <div class="">
                             <a href="#" class="item-link item-content">
                                 <div class="item-inner">
                                     <div class="item-title-row">
@@ -41,13 +41,6 @@
                                     <div class="item-text">{{ comment.text }}</div>
                                 </div>
                             </a></div>
-                        <div class="swipeout-actions">
-                            <div class="swipeout-actions-inner">
-                                <a href="#" class="demo-actions">More</a>
-                                <a href="#" data-confirm="Are you sure you want to delete this item?"
-                                   class="swipeout-delete">Delete</a>
-                            </div>
-                        </div>
                     </li>
                 </ul>
             </div>
