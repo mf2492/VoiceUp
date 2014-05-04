@@ -5,7 +5,8 @@ angular.module('voiceUp', [
     'ngAnimate',
     'ngCookies' ,
     'ngResource',
-    'ngSanitize'
+    'ngSanitize',
+    'ngTouch'
 ]).
     run(['$rootScope', 'jpHttp',
         function ($rootScope, jpHttp) {

@@ -10,4 +10,12 @@ angular.module('voiceUp').
                     });
                 }
             }
-        }]);
+        }]).
+     directive('swipeVote', [
+            function () {
+                return {
+                    link: function ($scope, element) {
+                    
+                    }
+                }
+            }]);
