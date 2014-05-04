@@ -15,6 +15,9 @@ angular.module('voiceUp').
             function () {
                 return {
                     link: function ($scope, element) {
+                        element.on('click', function (event) {
+                            $scope.swipeVote();
+                        });
                     
                     }
                 }
