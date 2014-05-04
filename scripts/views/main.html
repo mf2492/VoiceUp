@@ -24,7 +24,7 @@
                 <a class="button open-panel" style="color:white; font-size:15px">Filter</a>
             </div>
             <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
-                VoiceUp
+                Voice<b>Up...</b>
             </div>
             <div class="right">
                 <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>
@@ -41,7 +41,7 @@
                 <ul>
                     <li class="" ng-repeat="comment in comments | filter:{'category' : category }"
                         ng-swipe-right="voteYes(comment.id)" ng-swipe-left="voteNo(comment.id)">
-                        <div ng-style="{'background-image' : 'url(' + comment.image +')'}">
+                        <div ng-style="{'background' : '#000 url(' + comment.image +')'}" style="background-size:contain;background-repeat:no-repeat;background-position:center;">
                             <a class="item-link item-content" ng-style="{'background' : comment.color }">
                                 <div class="item-inner">
                                     <div class="item-title-row">
