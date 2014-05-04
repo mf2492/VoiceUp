@@ -27,7 +27,7 @@
     <div class="page">
         <div class="page-content">
 
-            <div class="list-block media-list">
+            <div class="list-block media-list" ng-swipe-right="voteYes()" ng-swipe-left="voteNo()">
                 <ul>
                     <li class="" ng-repeat="comment in comments track by $index | orderObjectBy:'timestamp'">
                         <div class="">
@@ -39,6 +39,11 @@
                                     </div>
                                     <div class="item-subtitle">{{ comment.sentiment.sentiment_score }}</div>
                                     <div class="item-text">{{ comment.text }}</div>
+                                    <div class="vote">
+                                        <img style="width:50px; margin-top: -65px; display:none; position:absolute;" src="thumbs-up.svg">
+                                        <img style="width:50px; margin-top: -65px; right:0; display:none; position:absolute;" src="thumbs-down.svg">
+
+                                    </div>
                                 </div>
                             </a></div>
                     </li>
