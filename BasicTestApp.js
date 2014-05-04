@@ -1,7 +1,7 @@
 ;(function (){
 	// the consumer key and secret
-	var consumerKey = "",
-		consumerSecret = "";
+	var consumerKey = "74b337a6-3082-4480-b6e6-47424f73e22d",
+		consumerSecret = "51dcc578-9708-4f8e-b2cb-90b7d21331f3";
 
 	function log(message) {
 		document.body.innerHTML += message + "<br/>";
@@ -10,9 +10,12 @@
 	function getInitialText() {
 		var result = [];
 
-		result.push("Lisa - there's 2 Skinny cow coupons available $5 skinny cow ice cream coupons on special k boxes and Printable FPC from facebook - a teeny tiny cup of ice cream. I printed off 2 (1 from my account and 1 from dh's). I couldn't find them instore and i'm not going to walmart before the 19th. Oh well sounds like i'm not missing much ...lol");
-		result.push("In Lake Louise - a guided walk for the family with Great Divide Nature Tours  rent a canoe on Lake Louise or Moraine Lake  go for a hike to the Lake Agnes Tea House. In between Lake Louise and Banff - visit Marble Canyon or Johnson Canyon or both for family friendly short walks. In Banff  a picnic at Johnson Lake  rent a boat at Lake Minnewanka  hike up Tunnel Mountain  walk to the Bow Falls and the Fairmont Banff Springs Hotel  visit the Banff Park Museum. The \"must-do\" in Banff is a visit to the Banff Gondola and some time spent on Banff Avenue - think candy shops and ice cream.");
-		result.push("On this day in 1786 - In New York City  commercial ice cream was manufactured for the first time.");
+		// result.push("Lisa - there's 2 Skinny cow coupons available $5 skinny cow ice cream coupons on special k boxes and Printable FPC from facebook - a teeny tiny cup of ice cream. I printed off 2 (1 from my account and 1 from dh's). I couldn't find them instore and i'm not going to walmart before the 19th. Oh well sounds like i'm not missing much ...lol");
+		// result.push("In Lake Louise - a guided walk for the family with Great Divide Nature Tours  rent a canoe on Lake Louise or Moraine Lake  go for a hike to the Lake Agnes Tea House. In between Lake Louise and Banff - visit Marble Canyon or Johnson Canyon or both for family friendly short walks. In Banff  a picnic at Johnson Lake  rent a boat at Lake Minnewanka  hike up Tunnel Mountain  walk to the Bow Falls and the Fairmont Banff Springs Hotel  visit the Banff Park Museum. The \"must-do\" in Banff is a visit to the Banff Gondola and some time spent on Banff Avenue - think candy shops and ice cream.");
+		// result.push("On this day in 1786 - In New York City  commercial ice cream was manufactured for the first time.");
+		result.push("The food is awful");
+		result.push("upper management is incompetent");
+		result.push("I love working here");
 
 		return result;
 	}
@@ -20,6 +23,7 @@
 	function processResponse(analyticData) {
 		for(var i=0, data;data=analyticData[i];i++) {
 			// Printing of document sentiment score
+
 			log(SemantriaActiveSession.tpl("Document {id}. Sentiment score: {sentiment_score}", data));
 			// Printing of document themes
 			log("<div style='margin-left: 15px;'/>Document themes:");
