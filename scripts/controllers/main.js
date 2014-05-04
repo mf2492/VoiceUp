@@ -8,4 +8,7 @@ angular.module('voiceUp')
 
             $scope.comments = comments.get();
 
+            $log($scope.comments)
+//            comments.purge();
+
         }]);
