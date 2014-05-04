@@ -36,35 +36,47 @@ angular.module('voiceUp')
             }
 
             function getBackground(score) {
-                var maxPositive = {r:24, g:254, b:0},
-                    maxNeutral  = {r:255, g:255, b:255},
-                    maxNegative = {r:254, g:17, b:0},
-                    r, g, b;
+                var maxPositive = {r: 24, g: 254, b: 0},
+                    maxNeutral = {r: 255, g: 255, b: 255},
+                    maxNegative = {r: 254, g: 17, b: 0},
+                    r, g, b, a;
 
-                  if (score < 0) {
-                      r = (maxNeutral.r - maxNegative.r) * score;
-                      g = (maxNeutral.g - maxNegative.g) * score;
-                      b = (maxNeutral.b - maxNegative.b) * score;
-                  } else if (score > 0) {
-                      r = (maxNeutral.r - maxPositive.r) * score;
-                      g = (maxNeutral.g - maxPositive.g) * score;
-                      b = (maxNeutral.b - maxPositive.b) * score;
-                  } else {
-                      r = maxNeutral.r;
-                      g = maxNeutral.g;
-                      b = maxNeutral.b;
-                  }
+                if (score > 0) {
+                    r = maxPositive.r;
+                    g = maxPositive.g;
+                    b = maxPositive.b;
+                    a = (score + 2) * 63.75;
+                } else if (score < 0) {
+                    r = maxNegative.r;
+                    g = maxNegative.g;
+                    b = maxNegative.b;
+                    a = (score + 2) * 63.75;
+                } else {
+                    r = maxNeutral.r;
+                    g = maxNeutral.g;
+                    b = maxNeutral.b;
+                    a = 255;
+                }
 
                 $log(score, 'score')
 
                 $log(r, 'r');
                 $log(g, 'g');
                 $log(b, 'b');
+                $log(a, 'a');
 
+                try {
+                    return 'rgba('+r+','+g+','+b+','+Math.round(a)+')';
+                    //rgba2hex(r, g, b, Math.round(a));
+                } catch (e) {
+                    console.error(e);
+                }
+            }
 
-                var hex = rgbToHex(Math.round(r), Math.round(g), Math.round(b));
-                $log(hex, 'hex')
-                return (hex.length == 7) ? hex : false;
+            function rgba2hex(r, g, b, a) {
+                if (r > 255 || g > 255 || b > 255 || a > 255)
+                    throw "Invalid color component";
+                return '#' + (256 + r).toString(16).substr(1) +((1 << 24) + (g << 16) | (b << 8) | a).toString(16).substr(1);
             }
 
             function rgbToHex(r, g, b) {

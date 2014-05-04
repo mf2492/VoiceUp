@@ -51,4 +51,12 @@ angular.module('voiceUp').
                 .fadeOut();
         }
 
-    }]);
+    }]).
+    directive('externalLink', function() {
+        return function(scope, element, attributes) {
+            element.on('click', function() {
+                window.location.href = attributes.href;
+                event.preventDefault();
+            });
+        }
+    });
