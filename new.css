@@ -42,6 +42,7 @@
   color: #fff;
   font-weight: 400;
   background: rgba(58, 58, 58, 0.8);
+  border-bottom: 0px;
 }
 .list-block .item-content{
   padding: 2% 10%;
@@ -153,6 +154,7 @@
   font-weight: 300;
   font-size: 1.05em;
   color: #FAFAFA;
+  background:transparent;
   letter-spacing: 0.04em;
   text-shadow: 1px 1px rgba(177, 177, 177, 0.5);
   line-height: 21px;
@@ -328,6 +330,7 @@ label.label-checkbox i.icon-form-checkbox {
   text-align: left;
   text-indent: 7px;
   font-size: .8em;
+  margin: 0;
 }
 .add-conversations .post{
   width: 30%;

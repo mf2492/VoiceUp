@@ -4,6 +4,9 @@
 var current_id;
 var comments_array;
 
+function send_feedback(){
+    window.location.href = "mailto:mail@domain.tld";
+}
 
 function disabled(id){
     $(".list-block.media-list ul li:nth-last-child("+id+") .like").addClass("disabled");
@@ -24,7 +27,7 @@ function send_email(){
               'from_email': 'chany2.rpi@gmail.com',
               'to': [
                   {
-                    'email': 'gary@voiceaupp.com',
+                    'email': 'chany2.rpi@gmail.com',
                     'name': 'RECIPIENT NAME (OPTIONAL)',
                     'type': 'to'
                   }
