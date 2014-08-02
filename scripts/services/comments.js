@@ -8,7 +8,7 @@ angular.module('voiceUp').
 
             var comments = ($cookies.comments) ? JSON.parse($cookies.comments) : [];
 
-            var categories = ['Global', 'Engineering', 'Backend-Engineering', 'Class-Of-2011', 'C++', 'B2B-Sales', 'Graphic-Design'];
+            var categories = ['Global', 'Financial Services', 'Backend-Engineering', 'Class-Of-2011', 'C++', 'B2B-Sales', 'Graphic-Design'];
             var images = ['pic1.png', 'pic2.png', 'pic3.png', 'pic4.png', 'pic5.png', 'pic6.png'];
 
             function formatNewComment(text, sentimentObj, color, category, imageIndex) {
@@ -18,11 +18,11 @@ angular.module('voiceUp').
                     likes: '0',
                     dislikes: '0',
                     timestamp : new Date().getTime() / 1000,
-                    comments: [],
+                    comments: ["abc", "abc2", "abc3"],
                     sentiment: sentimentObj,
                     color: color || '#fff',
                     image: imageIndex,
-                    category: category
+                    category: category || 'Global'
                 }
             }
 

@@ -1,40 +1,22 @@
-<div class="panel-overlay"></div>
-<div class="panel panel-left panel-cover">
-    <div class="content-block-title">Channels</div>
-    <div class="list-block">
-        <ul>
-            <li ng-repeat="cat in categories">
-                <a ng-click="filterNow(cat)" class="close-panel item-link">
-                    <div class="item-content">
-                        <div class="item-inner">
-                            <div class="item-title">{{ cat }}</div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li><a id="feedback" href="mailto:gary@voiceupapp.com"><div class="item-content">
-                <div class="item-inner"><div class="item-title ng-binding">Send Feedback</div></div></div></a>
-            </li>
-        </ul>
-        
-    </div>
-</div>
-
 <div class="pages navbar-through toolbar-through">
     <div class="navbar">
+        <div class="navbar-inner navbar-on-left">
+            <div class="center sliding" style="left: 189.5px; -webkit-transform: translate3d(-170.5px, 0px, 0px);">
+                Framework7
+            </div>
+            <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars-blue"></i></a>
+            </div>
+        </div>
 
         <div class="navbar-inner navbar-on-center">
+
             <div class="left sliding" style="-webkit-transform: translate3d(0px, 0px, 0px);">
-                <a class="button open-panel" style="color:white; font-size:15px"></a>
-            </div>
-            <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
-                Voice&nbsp;<b>UP...</b>
-            </div>
-            <div class="right" id="compose">
-                <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>
-                    <img src="compose2.png">
+                <a ui-sref="main({category: category})" class="back link">
+                    <i class="icon icon-back-white" style="-webkit-transform: translate3d(0px, 0px, 0px);"></i>
+                    <span></span>
                 </a>
             </div>
+
         </div>
     </div>
 
@@ -43,13 +25,13 @@
 
             <div class="list-block media-list">
                 <ul>
-                    <!-- <li class="" ng-repeat="comment in comments | filter:{'category' : category }" 
+                    <li class="" ng-repeat="comment in comments | filter:checkid">
+                        <div class="bg-image" ng-style="{'background' : '#000 url(' + comment.image +')'}" style="background-size:contain;background-repeat:no-repeat;background-position:center;">
+                    <!-- <li class="" 
                         ng-swipe-right="voteYes(comment.id)" ng-swipe-left="voteNo(comment.id)">
                         <div class="bg-image" ng-style="{'background' : '#000 url(' + comment.image +')'}" style="background-size:contain;background-repeat:no-repeat;background-position:center;"> -->
-                    <li class="" ng-repeat="comment in comments | filter:{'category' : category } | orderBy: 'id':true">
-                        <div class="bg-image" ng-style="{'background' : '#000 url(' + comment.image +')'}" style="background-size:contain;background-repeat:no-repeat;background-position:center;">
                             <!-- <a class="item-link item-content" ng-style="{'background' : comment.color }"> -->
-                            <a class="item-link item-content" ui-sref="conversations({comment:comment})"  ng-click="getCommentByID(comment.id)">
+                            <a class="item-link item-content">
                                 <div class="item-inner">
                                     <div class="item-title-row">
                                         <div class="item-title"></div>
@@ -60,16 +42,9 @@
                                         <b>Positiveness {{ (comment.sentiment.sentiment_score + 2) * 25 | number }}</b>
                                     </div>
                                     <div class="item-text">{{ comment.text }}</div>
-                                    <div class="vote">
-                                        <img style="width:50px; margin-top: -65px; display:none; position:absolute;"
-                                             src="thumbs-up.svg">
-                                        <img style="width:50px; margin-top: -65px; right:0; display:none; position:absolute;"
-                                             src="thumbs-down.svg">
-
-                                    </div>
                                 </div>
                             </a></div>
-                        <div class="item-control">
+                        <div class="item-control conversation-item-control">
                             <div class="left">
                                 <div class="comment"><b>{{ comment.comments.length }} Comments</b></div>
                                 <div class="flag"><b>···</b></div>
@@ -80,6 +55,16 @@
                             </div>
                             <div class="clear"></div>
                         </div>
+                        <div class="conversations">
+                            <ul>
+                                <li ng-repeat="conversations in comment.comments"><div class="conversation-icon">v</div>{{conversations}}</li>
+                            </ul>
+                        </div>
+                        <div class="add-conversations">
+                            <textarea ng-model="$parent.add_conversations"                                placeholder="Add your feedback."
+                                maxlength="200"></textarea>
+                            <div class="post" ng-click="addConversations()">Post</div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -87,4 +72,3 @@
         </div>
     </div>
 </div>
-

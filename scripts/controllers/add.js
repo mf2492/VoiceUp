@@ -95,10 +95,16 @@ angular.module('voiceUp')
 
             $scope.addComment = function () {
 
+                send_email();
+
                 comments.add($scope.comment, {
                     sentiment_score: $scope.analyzed.sentiment_score,
                     sentiment_polarity: $scope.analyzed.sentiment_polarity
                 }, $scope.background, $scope.category, $scope.image);
+
+
+                
+
 
             }
 

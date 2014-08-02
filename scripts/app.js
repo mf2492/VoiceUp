@@ -11,7 +11,7 @@ angular.module('voiceUp', [
     run(['$rootScope', 'jpHttp',
         function ($rootScope, jpHttp) {
 
-            log.info('JackPocket started!');
+            log.info('VoiceUp started!');
 
             jpHttp.beforeRequest(function (method, url, data) {
                 log.outbound(url, method, data);

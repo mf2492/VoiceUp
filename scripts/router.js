@@ -4,6 +4,7 @@ angular.module('voiceUp').
     config(function ($stateProvider, $urlRouterProvider, settings) {
 
         $urlRouterProvider.otherwise('/verification');
+        // $urlRouterProvider.otherwise('/main');
 
         $stateProvider.
             state('splash', {
@@ -24,6 +25,11 @@ angular.module('voiceUp').
                 url        : '/add/:category',
                 templateUrl: settings.paths.views + 'add.html',
                 controller : 'AddCtrl'
+            }).
+            state('conversations', {
+                url        : '/conversations/:id',
+                templateUrl: settings.paths.views + 'conversations.html',
+                controller : 'ConversationsCtrl'
             }).
             state('verification', {
                 url        : '/verification',
