@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li><a id="feedback"><div class="item-content">
-                <div class="item-inner" ng-click="send_feedback()"><div class="item-title ng-binding">Send Feedback</div></div></div></a>
+                <div class="item-inner" onclick="send_feedback()"><div class="item-title ng-binding">Send Feedback</div></div></div></a>
             </li>
         </ul>
         
@@ -25,10 +25,13 @@
 
         <div class="navbar-inner navbar-on-center">
             <div class="left sliding" style="-webkit-transform: translate3d(0px, 0px, 0px);">
-                <a class="button open-panel" style="color:white; font-size:15px"></a>
+                <a class="button open-panel"></a>
             </div>
-            <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
+            <!-- <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
                 Voice&nbsp;<b>UP...</b>
+            </div> -->
+            <div class="center sliding" style="left: -7px; -webkit-transform: translate3d(0px, 0px, 0px);">
+                Global</b>
             </div>
             <div class="right" id="compose">
                 <a ui-sref="add({category:category})" class="link icon-only"><i class="icon icon-plus-sign"></i>

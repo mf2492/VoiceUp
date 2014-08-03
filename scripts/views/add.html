@@ -35,8 +35,9 @@
                             <!-- <div class="item-content" id="compose-textarea" ng-style="{'background-color' : background }"> --><div class="item-content" id="compose-textarea">
                                 <div class="item-inner">
                                     <div class="item-input">
-                                        <textarea ng-model="comment"
-                                                  placeholder="What's the culture like?"
+                                        <textarea 
+                                                  ng-model="comment"
+                                                  placeholder="{{question}}"
                                                   maxlength="200"></textarea>
                                     </div>
                                 </div>
@@ -53,6 +54,7 @@
 
 
             <p class="warning">- Who will see this? -</p>
+            <p class="warning">{{category}}</p>
 
         </div>
     </div>

@@ -5,7 +5,7 @@ var current_id;
 var comments_array;
 
 function send_feedback(){
-    window.location.href = "mailto:mail@domain.tld";
+    window.location.href = "mailto:gary@voiceupapp.com";
 }
 
 function disabled(id){
@@ -15,32 +15,32 @@ function disabled(id){
 
 function send_email(){
     var message = $(".item-input textarea").val();
-    if($.trim(message).length == 0){
-        alert("Invalid Message");
-    }else{
-        $.ajax({
-          type: "POST",
-          url: "https://mandrillapp.com/api/1.0/messages/send.json",
-          data: {
-            'key': 's9eSYaje1Dv629OGNJgizg',
-            'message': {
-              'from_email': 'chany2.rpi@gmail.com',
-              'to': [
-                  {
-                    'email': 'chany2.rpi@gmail.com',
-                    'name': 'RECIPIENT NAME (OPTIONAL)',
-                    'type': 'to'
-                  }
-                ],
-              'autotext': 'true',
-              'subject': 'VoiceUp Message',
-              'html': message
-            }
-          }
-         }).done(function(response) {
-           console.log(response); // if you're into that sorta thing
-         });
-    }
+    // if($.trim(message).length == 0){
+    //     alert("Invalid Message");
+    // }else{
+    //     $.ajax({
+    //       type: "POST",
+    //       url: "https://mandrillapp.com/api/1.0/messages/send.json",
+    //       data: {
+    //         'key': 's9eSYaje1Dv629OGNJgizg',
+    //         'message': {
+    //           'from_email': 'chany2.rpi@gmail.com',
+    //           'to': [
+    //               {
+    //                 'email': 'chany2.rpi@gmail.com',
+    //                 'name': 'RECIPIENT NAME (OPTIONAL)',
+    //                 'type': 'to'
+    //               }
+    //             ],
+    //           'autotext': 'true',
+    //           'subject': 'VoiceUp Message',
+    //           'html': message
+    //         }
+    //       }
+    //      }).done(function(response) {
+    //        console.log(response); // if you're into that sorta thing
+    //      });
+    // }
 }
 
 angular.module('voiceUp')
@@ -51,6 +51,7 @@ angular.module('voiceUp')
             log.ctrl('Main');
 
             $scope.comments = comments.get();
+            //comments.loading_existing();
             $scope.categories = comments.getCategories();
 
             $scope.category = $stateParams.category;

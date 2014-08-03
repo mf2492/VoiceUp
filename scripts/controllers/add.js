@@ -18,6 +18,17 @@ angular.module('voiceUp')
 
             $scope.image = $scope.images[$scope.randomImageIndex];
 
+            $scope.questionlist = [
+            'What are the challenges you are facing? Where are you stuck?', 
+            'What\'s going well? Any wins ( big or little) this week?', 
+            'What\'s the morale you see around you?', 
+            'List one idea to improve individual productivity, team’s productivity, or our customers’ experience.', 
+            'List one suggestion to improve your role, team or organization?'
+            ];
+            $scope.question = $scope.questionlist[Math.floor(Math.random()*$scope.questionlist.length)];
+            
+
+
             $scope.shuffle = function() {
                 $scope.randomImageIndex = comments.getRandomImageIndex();
                 $scope.image = $scope.images[$scope.randomImageIndex];
@@ -43,6 +54,11 @@ angular.module('voiceUp')
                             log.info('background changed to', $scope.background);
                         }
                     });
+            }
+
+
+            function randomPlaceholder($scope) {
+                
             }
 
             function getBackground(score) {
@@ -100,12 +116,7 @@ angular.module('voiceUp')
                 comments.add($scope.comment, {
                     sentiment_score: $scope.analyzed.sentiment_score,
                     sentiment_polarity: $scope.analyzed.sentiment_polarity
-                }, $scope.background, $scope.category, $scope.image);
-
-
-                
-
-
+                }, $scope.background, $scope.category, $scope.image, $scope.question);
             }
 
         }]);

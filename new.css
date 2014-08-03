@@ -61,8 +61,10 @@
 }
 .open-panel {
   position: relative;
-  padding-left: 1.25em;
   border: 0;
+  padding: 0 25px;
+  color: white;
+  font-size: 15px;
 }
 .open-panel:before {
   content: "";
@@ -109,7 +111,7 @@
   margin: 0 10px;
 }
 #compose-toolbar{
-  background: #eeeeee;
+  background: #fff;
   width: 100%;
   float: right;
   z-index: 9999;
@@ -198,7 +200,7 @@
   margin: -40px 0px;
 }
 .list-block textarea{
-  font-size: 1em;
+  padding: 20px;
   height: 240px;
   text-align: center;
   font-weight: 300;
@@ -237,6 +239,14 @@
 .fav .button.dislike{
   background: #fff;
   color:#3a3a3a;
+}
+.fav .button.pressed{
+  background: #cc3701;
+  color: #fff;
+  border: 2px solid #FFF;
+}
+.fav .button.dislike.pressed img{
+  -webkit-filter: invert(100%);
 }
 .item-control .left{
   float:left;
@@ -326,7 +336,7 @@ label.label-checkbox i.icon-form-checkbox {
   float:left;
   width: 70%;
   height: 44px;
-  line-height: 3;
+  line-height: 0;
   text-align: left;
   text-indent: 7px;
   font-size: .8em;
